@@ -13,6 +13,17 @@ C 语言基础手写实现（不调用标准库的字符串函数）。目的不
 | `my_strcpy` | `char* my_strcpy(char* dst, const char* src)` | 必须手动补 `'\0'`；返回 `dst` 而不是长度，便于链式调用 | 已验证 |
 | `my_strcmp` | `int my_strcmp(const char* s1, const char* s2)` | 必须**出了循环再 return**；只保证负 / 零 / 正，不保证 −1 / 1 | 已验证 |
 
+## 仓库结构
+
+```
+CLanguage/
+├── strings.c                        # 三个手写函数 + 测试 main
+├── README.md                        # 本文
+├── .gitignore                       # 排除 .vs/ x64/ Debug/ *.exe 等构建产物
+└── images/
+    └── test-output-20261107.png     # 2026-11-07 实际运行输出截图（证据）
+```
+
 ## 编译与运行
 
 ```bash
@@ -30,6 +41,8 @@ strings.exe
 > 源文件第一行的 `#define _CRT_SECURE_NO_WARNINGS` 是给 MSVC 关掉"不安全函数"警告用的；本代码没有调用任何字符串库函数，所以它其实可有可无，留着无害。
 
 ## 实际输出（2026-11-07 20:46 运行验证）
+
+![运行输出](images/test-output-20261107.png)
 
 ```
 strlen("hello") = 5
